@@ -1,0 +1,56 @@
+class DevonshireCream {
+    serveOn() {
+        return "Scones";
+    }
+}
+
+print DevonshireCream;
+
+var cream = DevonshireCream();
+print cream;
+
+class Bacon {
+    eat() {
+        print "Crunch crunch crunch!";
+    }
+}
+
+Bacon().eat();
+
+class Thing {
+    getCallback() {
+        fun localFunction() {
+            print this;
+        }
+
+        return localFunction;
+    }
+}
+
+var callback = Thing().getCallback();
+callback();
+
+class Cake {
+    taste() {
+        var adjective = "delicious";
+        print "The " + this.flavor + " cake is " + adjective + "!";
+    }
+}
+
+var cake = Cake();
+cake.flavor = "German chocolate";
+cake.taste();
+
+class Doughnut {
+    cook() {
+        print "Fry until golden brown.";
+    }
+}
+
+class BostonCream < Doughnut {
+    cook() {
+        super.cook();
+        print "Stuff it with cream.";
+    }
+}
+BostonCream().cook();
